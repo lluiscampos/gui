@@ -219,7 +219,7 @@ echo "Done!"'
     it('should contain sane information for staging preview calls', async () => {
       code = getDebConfigurationCode(undefined, true, false, 'token', 'raspberrypi3', true);
       expect(code).toMatch(
-        `wget -q -O- https://get.mender.io/staging | sudo bash -s -- --demo && \\
+        `wget -q -O- https://get.mender.io/staging | sudo bash -s -- -c experimental --demo && \\
 sudo bash -c 'DEVICE_TYPE="raspberrypi3" && \\
 TENANT_TOKEN="token" && \\
 echo "Running mender setup for staging.hosted.mender.io" && \\
